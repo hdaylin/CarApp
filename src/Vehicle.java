@@ -1,58 +1,34 @@
 
-public class Vehicle { 
+public abstract class Vehicle { 
+	private int speed; 
+	private String color;  
+    private Person driver;
 
-	private int speed = 500; 
-	private String color = "red";  
-	private String type = "Porshe"; 
-	private boolean emmission = true; 
+	public Person getDriver() {
+		return driver;
+	}
 
+	public void setDriver(Person driver) {
+		this.driver = driver;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
 
 	public Vehicle(){
 
-		System.out.println("The red Porsche is starting");
-	}
-	
-	public Vehicle(int sp, String cx, String xx, boolean e){ 
-	
-		speed = sp;
-		color = cx; 
-		type =xx;  
-		emmission = e;
 		
-		System.out.println("The " + color +" " + type +" is starting");
-		System.out.println("the " + color +" " + type +" is going "  + speed + " mph");  
-		
-		if(emmission== true){
-			System.out.println("The " + type + " passed the emmission test."); 
-			
-		}else{
-			System.out.println("The " + type + " stopped for an emmission test.");
-		}
-		
-
 	}
 
 	public String Accelerating(){
-		return "The car is now accelerating.";
+		return "The vehicles is now accelerating.";
 	}
 
 	public int getSpeed(){
 		return speed; 
 	}   
 	
-	public boolean getemmission(){
-		return emmission;
-	} 
-	
-	public String gettype(){
-		return type;
-	}
-	
-	public void setSpeed(int newspeed)
-	{
-		speed = newspeed; 
-		System.out.println(newspeed);
-	}
 	public void fasterSpeed()
 	{
 		speed = speed +500; 
@@ -69,8 +45,10 @@ public class Vehicle {
 	}
 
 	public String Stop(){
-		return "The car has now stopped"; 
+		return "The vehicle has now stopped"; 
 	}
+
+	
 
 
 }
